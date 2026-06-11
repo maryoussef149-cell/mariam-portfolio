@@ -24,7 +24,58 @@ const PROJECTS = [
   },
 ];
 
+const CERTIFICATES = [
+  {
+    name: 'AWS: Intro to Cloud Computing',
+    issuer: 'Manara Tech',
+    link: 'https://drive.google.com/file/d/1M9FukHKUvqvEfTyoFmQhMx-SRo__IuXn/view?usp=drive_link',
+    color: '#FF9900',
+  },
+  {
+    name: 'DevOps Learning Path',
+    issuer: 'Manara Tech',
+    link: 'https://drive.google.com/file/d/1XQnAuAnkzAt_9WUjPtwDBQsZDVEt_JR6/view?usp=drive_link',
+    color: '#58a6ff',
+  },
+  {
+    name: 'React JS',
+    issuer: 'ITI / Mahara Tech',
+    link: 'https://drive.google.com/file/d/1hukLBXM0CgJmtmG0RDxcTs7MdjQULYZ4/view?usp=drive_link',
+    color: '#39d0d8',
+  },
+  {
+    name: 'Ubuntu Linux Essentials',
+    issuer: 'ITI / Mahara Tech',
+    link: 'https://drive.google.com/file/d/183vgI-3EopKJEEQRGuyKnGnjJiQBwUsN/view?usp=drive_link',
+    color: '#3fb950',
+  },
+  {
+    name: 'UI/UX Design',
+    issuer: 'Sprints x Microsoft',
+    link: 'https://drive.google.com/file/d/1PGfUGMZs_vZN6HV1Z195k6PidaCUEsMC/view?usp=drive_link',
+    color: '#d29922',
+  },
+];
+
 const PIPELINE = ['git push', 'github actions', 'docker build', 'docker hub', 'aws ec2', 'nginx'];
+
+const CONTACT = [
+  {
+    icon: '⌥',
+    label: 'github.com/maryoussef149-cell',
+    href: 'https://github.com/maryoussef149-cell',
+  },
+  {
+    icon: '⊞',
+    label: 'linkedin.com/in/mariam-a-mosad',
+    href: 'https://www.linkedin.com/in/mariam-a-mosad-824507372',
+  },
+  {
+    icon: '✉',
+    label: 'maryoussef49@gmail.com',
+    href: 'mailto:maryoussef49@gmail.com',
+  },
+];
 
 function TerminalWindow() {
   const lines = [
@@ -76,21 +127,19 @@ function TerminalWindow() {
 export default function App() {
   return (
     <div style={styles.page}>
-      {/* Nav */}
       <nav style={styles.nav}>
         <span style={styles.navLogo}>~/mariam-ayman $</span>
         <ul style={styles.navLinks}>
-          {['about', 'projects', 'skills', 'contact'].map(l => (
+          {['about', 'projects', 'certificates', 'skills', 'contact'].map(l => (
             <li key={l}><a href={`#${l}`} style={styles.navLink}>{l}</a></li>
           ))}
         </ul>
       </nav>
 
-      {/* Hero */}
       <section style={styles.hero} id="about">
         <div style={styles.heroGrid}>
           <div>
-            <div style={styles.heroTag}> available for opportunities</div>
+            <div style={styles.heroTag}>// available for opportunities</div>
             <div style={styles.heroName}>Mariam Ayman</div>
             <div style={styles.heroTitle}>DevOps Engineer</div>
             <p style={styles.heroDesc}>Building and automating infrastructure. CI/CD pipelines, containerization, and cloud deployments on AWS.</p>
@@ -103,7 +152,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Pipeline */}
       <section style={styles.section}>
         <div style={styles.sectionHeader}>
           <span style={styles.sectionTag}>02</span>
@@ -126,7 +174,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* Projects */}
       <section style={styles.section} id="projects">
         <div style={styles.sectionHeader}>
           <span style={styles.sectionTag}>03</span>
@@ -150,17 +197,42 @@ export default function App() {
         </div>
       </section>
 
-      {/* Skills */}
-      <section style={styles.section} id="skills">
+      <section style={styles.section} id="certificates">
         <div style={styles.sectionHeader}>
           <span style={styles.sectionTag}>04</span>
+          <span style={styles.sectionTitle}>certificates</span>
+          <div style={styles.sectionLine} />
+        </div>
+        <div style={styles.certsGrid}>
+          {CERTIFICATES.map(c => (
+            <a
+              key={c.name}
+              href={c.link}
+              target="_blank"
+              rel="noreferrer"
+              style={styles.certCard}
+            >
+              <div style={{ ...styles.certAccent, background: c.color }} />
+              <div style={styles.certContent}>
+                <div style={styles.certName}>{c.name}</div>
+                <div style={styles.certIssuer}>{c.issuer}</div>
+              </div>
+              <span style={styles.certArrow}>↗</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section style={styles.section} id="skills">
+        <div style={styles.sectionHeader}>
+          <span style={styles.sectionTag}>05</span>
           <span style={styles.sectionTitle}>skills</span>
           <div style={styles.sectionLine} />
         </div>
         <div style={styles.skillsGrid}>
           {Object.entries(SKILLS).map(([group, items]) => (
             <div key={group} style={styles.skillGroup}>
-              <div style={styles.skillGroupTitle}> {group}</div>
+              <div style={styles.skillGroupTitle}>// {group}</div>
               {items.map(s => (
                 <div key={s} style={styles.skillItem}>
                   <div style={styles.skillDot} />
@@ -172,23 +244,18 @@ export default function App() {
         </div>
       </section>
 
-      {/* Contact */}
       <section style={styles.section} id="contact">
         <div style={styles.sectionHeader}>
-          <span style={styles.sectionTag}>05</span>
+          <span style={styles.sectionTag}>06</span>
           <span style={styles.sectionTitle}>contact</span>
           <div style={styles.sectionLine} />
         </div>
         <div style={styles.contactRow}>
-          {[
-            { icon: '⌥', label: 'github.com/maryoussef149-cell' },
-            { icon: '⊞', label: 'linkedin.com/in/mariam-ayman' },
-            { icon: '✉', label: 'mariam@email.com' },
-          ].map(c => (
-            <div key={c.label} style={styles.contactItem}>
+          {CONTACT.map(c => (
+            <a key={c.label} href={c.href} target="_blank" rel="noreferrer" style={styles.contactItem}>
               <span style={{ color: '#58a6ff', fontSize: 16 }}>{c.icon}</span>
               <span>{c.label}</span>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -216,7 +283,7 @@ const styles = {
   dot: { width: 10, height: 10, borderRadius: '50%', display: 'inline-block' },
   termTitle: { fontFamily: 'JetBrains Mono', fontSize: 11, color: '#8b949e', marginLeft: 6 },
   termBody: { padding: '1.25rem' },
-  cursor: { display: 'inline-block', width: 8, height: 14, background: '#58a6ff', animation: 'blink 1s infinite', verticalAlign: 'middle' },
+  cursor: { display: 'inline-block', width: 8, height: 14, background: '#58a6ff', verticalAlign: 'middle' },
   section: { padding: '2.5rem 2rem', borderBottom: '1px solid #1e2d3d' },
   sectionHeader: { display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' },
   sectionTag: { fontFamily: 'JetBrains Mono', fontSize: 11, color: '#8b949e' },
@@ -237,11 +304,18 @@ const styles = {
   projectDesc: { fontSize: 12, color: '#8b949e', lineHeight: 1.5, marginBottom: '0.75rem' },
   tagRow: { display: 'flex', flexWrap: 'wrap', gap: 6 },
   tag: { fontFamily: 'JetBrains Mono', fontSize: 10, padding: '2px 8px', borderRadius: 3, background: '#1c2128', color: '#8b949e', border: '1px solid #21262d' },
+  certsGrid: { display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' },
+  certCard: { display: 'flex', alignItems: 'center', gap: '1rem', background: '#0d1117', border: '1px solid #30363d', borderRadius: 8, padding: '1rem 1.25rem', textDecoration: 'none', cursor: 'pointer', transition: 'border-color 0.2s' },
+  certAccent: { width: 3, height: 36, borderRadius: 2, flexShrink: 0 },
+  certContent: { flex: 1 },
+  certName: { fontSize: 13, fontWeight: 500, color: '#e2e8f0', marginBottom: 3 },
+  certIssuer: { fontFamily: 'JetBrains Mono', fontSize: 10, color: '#8b949e' },
+  certArrow: { color: '#8b949e', fontSize: 14 },
   skillsGrid: { display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.75rem' },
   skillGroup: { background: '#0d1117', border: '1px solid #30363d', borderRadius: 6, padding: '1rem' },
   skillGroupTitle: { fontFamily: 'JetBrains Mono', fontSize: 10, color: '#58a6ff', letterSpacing: '0.1em', marginBottom: '0.75rem' },
   skillItem: { display: 'flex', alignItems: 'center', gap: 6, fontSize: 12, color: '#8b949e', marginBottom: 6 },
   skillDot: { width: 5, height: 5, borderRadius: '50%', background: '#3fb950', flexShrink: 0 },
-  contactRow: { display: 'flex', gap: '1rem', flexWrap: 'wrap' },
-  contactItem: { display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'JetBrains Mono', fontSize: 12, color: '#8b949e' },
+  contactRow: { display: 'flex', gap: '1.5rem', flexWrap: 'wrap' },
+  contactItem: { display: 'flex', alignItems: 'center', gap: 8, fontFamily: 'JetBrains Mono', fontSize: 12, color: '#8b949e', textDecoration: 'none' },
 };
