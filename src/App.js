@@ -8,17 +8,17 @@ const SKILLS = {
 
 const PROJECTS = [
   {
-    name: 'CI/CD Pipeline — Forrest Gump',
+    name: 'CI/CD Pipeline Forrest Gump Psycological Analysis',
     desc: 'End-to-end automated deployment pipeline. Push to main → Docker build → EC2 deploy in under 60 seconds.',
     tags: ['GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
     status: 'live',
     icon: '⬡',
   },
   {
-    name: 'This Portfolio Site',
+    name: 'This Portfolio',
     desc: 'Portfolio site with its own CI/CD pipeline. Built and deployed using the same infrastructure it showcases.',
-    tags: ['React', 'Vercel', 'GitHub Actions', 'Docker'],
-    status: 'in progress',
+    tags: ['React', 'Vercel', 'GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
+    status: 'live',
     icon: '</>',
   },
 ];
