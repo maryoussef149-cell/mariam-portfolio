@@ -13,7 +13,7 @@ const PROJECTS = [
     tags: ['GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
     status: 'live',
     icon: '</>',
-    link: 'http://13.60.208.252:80/',
+    link: 'http://13.60.208.252:80',
   },
   {
     name: 'This Portfolio',
@@ -21,7 +21,7 @@ const PROJECTS = [
     tags: ['React', 'Vercel', 'GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
     status: 'live',
     icon: '</>',
-    link: 'http://13.60.208.252:8080/',
+    link: 'http://13.60.208.252:8080',
   },
 ];
 
