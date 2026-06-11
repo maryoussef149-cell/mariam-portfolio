@@ -203,8 +203,9 @@ export default function App() {
           <SectionHeader num="03" title="projects" />
           <div className="projects-grid">
             {PROJECTS.map(p => (
-              <div key={p.name} className="project-card">
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
+          <div key={p.name} className="project-card" style={{ position: 'relative' }}> 
+            <a href={p.href} target="_blank" rel="noreferrer" style={{ position: 'absolute', inset: 0, zIndex: 1 }} />
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                   <span style={{ fontSize: 22, color: '#58a6ff' }}>{p.icon}</span>
                   <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 10, padding: '3px 10px', borderRadius: 20, background: '#1c2128', border: '1px solid #30363d', color: '#3fb950' }}>{p.status}</span>
                 </div>
