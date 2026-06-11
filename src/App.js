@@ -139,7 +139,7 @@ export default function App() {
       <section style={styles.hero} id="about">
         <div style={styles.heroGrid}>
           <div>
-            <div style={styles.heroTag}>// available for opportunities</div>
+            <div style={styles.heroTag}> available for opportunities</div>
             <div style={styles.heroName}>Mariam Ayman</div>
             <div style={styles.heroTitle}>DevOps Engineer</div>
             <p style={styles.heroDesc}>Building and automating infrastructure. CI/CD pipelines, containerization, and cloud deployments on AWS.</p>
@@ -232,7 +232,7 @@ export default function App() {
         <div style={styles.skillsGrid}>
           {Object.entries(SKILLS).map(([group, items]) => (
             <div key={group} style={styles.skillGroup}>
-              <div style={styles.skillGroupTitle}>// {group}</div>
+              <div style={styles.skillGroupTitle}> {group}</div>
               {items.map(s => (
                 <div key={s} style={styles.skillItem}>
                   <div style={styles.skillDot} />
