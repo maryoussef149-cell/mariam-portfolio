@@ -12,7 +12,8 @@ const PROJECTS = [
     desc: 'End-to-end automated deployment pipeline. Push to main → Docker build → EC2 deploy in under 60 seconds.',
     tags: ['GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
     status: 'live',
-    icon: '⬡',
+    icon: '</>',
+    link: 'http://13.60.208.252:80/',
   },
   {
     name: 'This Portfolio',
@@ -20,6 +21,7 @@ const PROJECTS = [
     tags: ['React', 'Vercel', 'GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
     status: 'live',
     icon: '</>',
+    link: 'http://13.60.208.252:8080/',
   },
 ];
 
