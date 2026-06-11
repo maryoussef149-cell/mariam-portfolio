@@ -163,7 +163,7 @@ export default function App() {
       <section className="hero-pad" id="about" style={{ padding: '4rem 2rem 3rem', borderBottom: '1px solid #1e2d3d' }}>
         <div className="hero-grid" style={{ maxWidth: 960, margin: '0 auto' }}>
           <div>
-            <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#3fb950', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>// available for opportunities</div>
+            <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#3fb950', letterSpacing: '0.1em', marginBottom: '0.75rem' }}> available for opportunities</div>
             <div className="hero-name" style={{ fontSize: 36, fontWeight: 700, color: '#e2e8f0', lineHeight: 1.1, marginBottom: '0.5rem' }}>Mariam Ayman</div>
             <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 15, color: '#58a6ff', marginBottom: '1rem' }}>DevOps Engineer</div>
             <p style={{ fontSize: 14, color: '#8b949e', lineHeight: 1.7, maxWidth: 380, marginBottom: '2rem' }}>Building and automating infrastructure. CI/CD pipelines, containerization, and cloud deployments on AWS.</p>
@@ -241,7 +241,7 @@ export default function App() {
           <div className="skills-grid">
             {Object.entries(SKILLS).map(([group, items]) => (
               <div key={group} style={{ background: '#0d1117', border: '1px solid #30363d', borderRadius: 6, padding: '1.25rem' }}>
-                <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#58a6ff', letterSpacing: '0.1em', marginBottom: '0.75rem' }}>// {group}</div>
+                <div style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: 11, color: '#58a6ff', letterSpacing: '0.1em', marginBottom: '0.75rem' }}> {group}</div>
                 {items.map(s => (
                   <div key={s} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13, color: '#8b949e', marginBottom: 8 }}>
                     <div style={{ width: 5, height: 5, borderRadius: '50%', background: '#3fb950', flexShrink: 0 }} />
