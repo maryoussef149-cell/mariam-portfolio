@@ -13,7 +13,7 @@ const PROJECTS = [
     tags: ['GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
     status: 'live',
     icon: '</>',
-    href: 'http://13.60.208.252:80',
+    href: 'https://github.com/maryoussef149-cell/Forest-Gump-Psycological-Analysis',
   },
   {
     name: 'This Portfolio',
@@ -21,7 +21,7 @@ const PROJECTS = [
     tags: ['React', 'Vercel', 'GitHub Actions', 'Docker', 'AWS EC2', 'Nginx'],
     status: 'live',
     icon: '</>',
-    href: 'http://13.60.208.252:8080',
+    href: 'https://github.com/maryoussef149-cell/mariam-portfolio',
   },
   {
     name: 'AWS Infrastructure with Terraform',
