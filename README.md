@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+# ~/mariam-ayman $ — DevOps Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A terminal-themed developer portfolio built with React and deployed through a full CI/CD pipeline to AWS EC2 and Vercel.
 
-## Available Scripts
+🔗 **Live:** [mariam-portfolio-khaki.vercel.app](https://mariam-portfolio-khaki.vercel.app)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **React** — Frontend framework
+- **Nginx** — Static file server inside Docker
+- **Docker** — Multi-stage containerization (Node builder → Nginx Alpine)
+- **GitHub Actions** — CI/CD pipeline (push to main → auto deploy)
+- **AWS EC2** — Cloud hosting
+- **Vercel** — Frontend deployment (auto-deploy on push)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## CI/CD Pipeline
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Every push to `main` triggers the full pipeline automatically:git push → GitHub Actions → Docker build → AWS EC2 deploy → live in ~60s
 
-### `npm run build`
+The pipeline:
+1. Builds the React app inside a Node container
+2. Copies the build into an Nginx Alpine image
+3. Pushes the image to Docker Hub
+4. SSHs into EC2 and runs the new container
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
+mariam-portfolio/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml       # GitHub Actions CI/CD pipeline
+├── public/                  # Static assets
+├── src/                     # React source code
+├── Dockerfile               # Multi-stage Docker build
+├── nginx.conf               # Nginx config to serve React build
+├── package.json
+└── .env
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Docker
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Multi-stage build — keeps the final image small:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+dockerfile
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Stage 1: Build React app
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY . .
+RUN npm install && npm run build
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Stage 2: Serve with Nginx
+FROM nginx:alpine
+COPY --from=builder /app/build /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+EXPOSE 80
 
-## Learn More
+## GitHub Actions Pipeline
+Located at .github/workflows/deploy.yml
+Triggers on every push to main:
+Builds and tags the Docker image
+Pushes to Docker Hub
+SSHs into EC2 and pulls + runs the latest image
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+Mariam Ayman
+CS Student — Cairo University
+DevOps Engineering Track
