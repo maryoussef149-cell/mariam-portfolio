@@ -23,6 +23,14 @@ const PROJECTS = [
     icon: '</>',
     href: 'http://13.60.208.252:8080',
   },
+  {
+    name: 'AWS Infrastructure with Terraform',
+    desc: 'Provisioned full AWS environment (VPC, EC2, S3) using Terraform IaC. Dev and prod workspaces with isolated networks, automated Docker deployment on EC2.',
+    tags: ['Terraform', 'AWS', 'EC2', 'S3', 'VPC', 'Docker', 'IaC'],
+    status: 'live',
+    icon: '</>',
+    href: 'https://github.com/maryoussef149-cell/mariam-portfolio-infra',
+  },
 ];
 
 const CERTIFICATES = [
