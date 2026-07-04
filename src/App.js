@@ -37,7 +37,7 @@ const CERTIFICATES = [
   { name: 'AWS: Intro to Cloud Computing', issuer: 'Manara Tech', link: 'https://drive.google.com/file/d/1M9FukHKUvqvEfTyoFmQhMx-SRo__IuXn/view?usp=drive_link', color: '#FF9900' },
   { name: 'DevOps Learning Path', issuer: 'Manara Tech', link: 'https://drive.google.com/file/d/1XQnAuAnkzAt_9WUjPtwDBQsZDVEt_JR6/view?usp=drive_link', color: '#58a6ff' },
   { name: 'React JS', issuer: 'ITI / Mahara Tech', link: 'https://drive.google.com/file/d/1hukLBXM0CgJmtmG0RDxcTs7MdjQULYZ4/view?usp=drive_link', color: '#39d0d8' },
-  { name: 'AWS Certified Cloud Practitioner' , issuer: 'AWS', link: 'https://drive.google.com/file/d/15xbWQtmuZ8ar5qe-i2dNwa2J2uVEjjTb/view?usp=drivesdk' },
+  { name: 'AWS Certified Cloud Practitioner' , issuer: 'AWS', link: 'https://drive.google.com/file/d/15xbWQtmuZ8ar5qe-i2dNwa2J2uVEjjTb/view?usp=drivesdk', color: '#3fb950' },
   { name: 'Ubuntu Linux Essentials', issuer: 'ITI / Mahara Tech', link: 'https://drive.google.com/file/d/183vgI-3EopKJEEQRGuyKnGnjJiQBwUsN/view?usp=drive_link', color: '#3fb950' },
   { name: 'UI/UX Design', issuer: 'Sprints x Microsoft', link: 'https://drive.google.com/file/d/1PGfUGMZs_vZN6HV1Z195k6PidaCUEsMC/view?usp=drive_link', color: '#d29922' },
 ];
