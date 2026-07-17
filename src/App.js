@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from 'react';
 
 const SKILLS = {
-  cloud: ['AWS EC2', 'Security Groups', 'IAM', 'S3'],
-  'ci/cd': ['GitHub Actions', 'Docker', 'Docker Hub', 'Nginx'],
+  cloud: ['AWS EC2', 'Security Groups', 'IAM', 'S3',  'AWS EKS', 'AWS RDS', 'AWS VPC', 'Terraform'],
+  'ci/cd': ['GitHub Actions', 'Docker', 'Docker Hub', 'Nginx', 'kubernetes'],
   systems: ['Linux (Ubuntu)', 'SSH', 'Bash', 'Git'],
 };
 
 const PROJECTS = [
+  {
+  name: 'ShortLink — DevOps URL Shortener',
+  desc: 'End-to-end DevOps project: FastAPI/PostgreSQL app containerized with Docker, CI pipeline (GitHub Actions + Trivy + ruff), Terraform-provisioned AWS infra (VPC, EKS, RDS), deployed via Kubernetes manifests to a live EKS cluster.',
+  tags: ['FastAPI', 'PostgreSQL', 'Docker', 'GitHub Actions', 'Terraform', 'Kubernetes', 'AWS EKS', 'Trivy'],
+  status: 'live',
+  icon: '</>',
+  href: 'https://github.com/maryoussef149-cell/Shortlink-Devops-Project',
+  },
   {
     name: 'CI/CD Pipeline Forrest Gump Psycological Analysis',
     desc: 'End-to-end automated deployment pipeline. Push to main → Docker build → EC2 deploy in under 60 seconds.',
