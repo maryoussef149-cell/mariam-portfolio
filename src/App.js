@@ -8,7 +8,7 @@ const SKILLS = {
 
 const PROJECTS = [
   {
-  name: 'ShortLink — DevOps URL Shortener',
+  name: 'ShortLink - DevOps URL Shortener',
   desc: 'End-to-end DevOps project: FastAPI/PostgreSQL app containerized with Docker, CI pipeline (GitHub Actions + Trivy + ruff), Terraform-provisioned AWS infra (VPC, EKS, RDS), deployed via Kubernetes manifests to a live EKS cluster.',
   tags: ['FastAPI', 'PostgreSQL', 'Docker', 'GitHub Actions', 'Terraform', 'Kubernetes', 'AWS EKS', 'Trivy'],
   status: 'live',
@@ -57,11 +57,14 @@ const PIPELINE = [
   { label: 'docker hub', sub: 'registry' },
   { label: 'aws ec2', sub: 'deploy' },
   { label: 'nginx', sub: 'serve' },
+  { label: 'terraform', sub: 'provision aws' },
+  { label: 'kubernetes', sub: 'deploy to eks' },
+  { label: 'load balancer', sub: 'serve' },
 ];
 
 const CONTACT = [
   { icon: '⌥', label: 'github.com/maryoussef149-cell', href: 'https://github.com/maryoussef149-cell' },
-  { icon: '⌥', label: 'Credly Badges', href: 'https://www.credly.com/users/mariam-ayman.b9483160' },
+  { icon: '⧉', label: 'Credly Badges', href: 'https://www.credly.com/users/mariam-ayman.b9483160' },
   { icon: '⊞', label: 'linkedin.com/in/mariam-a-mosad', href: 'https://www.linkedin.com/in/mariam-a-mosad-824507372' },
   { icon: '✉', label: 'maryoussef49@gmail.com', href: 'mailto:maryoussef49@gmail.com' },
 ];
